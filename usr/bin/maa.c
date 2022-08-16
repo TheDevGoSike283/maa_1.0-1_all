@@ -68,8 +68,26 @@ int main() {
 			fflush(f_ptr);
 			fclose(f_ptr);
 	} else if (strcmp(&command, "speak") == 0) {
+		char hascopyone[1];
+		printf(YEL "Do you already have the file \"espeakcode.sh\" in your directory? Type y (yes) or n (no)\n");
+		scanf("%s", &hascopyone);
+		if (strcmp(&hascopyone, "y") == 0) {
+			printf(BLU "Ok then, moving on...\n");
+		} else if (strcmp(&hascopyone, "n") == 0) {
+			printf(YEL "Downloading...\n");
+			system("wget https://raw.githubusercontent.com/TheDevGoSike283/maa_1.0-1_all/main/usr/bin/maa.c");
+		}
 		system("sh espeakcode.sh");
 	} else if (strcmp(&command, "rainbowtext") == 0) {
+		char hascopytwo[1];
+		printf(YEL "Do you already have the file \"espeakcode.sh\" in your directory? Type y (yes) or n (no)\n");
+		scanf("%s", &hascopytwo);
+		if (strcmp(&hascopytwo, "y") == 0) {
+			printf(BLU "Ok then, moving on...\n");
+		} else if (strcmp(&hascopytwo, "n") == 0) {
+			printf(YEL "Downloading...\n");
+			system("wget https://raw.githubusercontent.com/TheDevGoSike283/maa_1.0-1_all/main/usr/bin/maa.c");
+		}
 		system("sh rainbowcode.sh");
 	} else {
 		printf(RED "INVALID COMMAND!\n");
