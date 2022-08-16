@@ -6,29 +6,28 @@
 int main() {
 	char command[200];
 	printf(GRN "Hi, welcome to MAA, which stands for \"my awesome app\" (in linux). Commands: \"rand\" prints a random number between 2 numbers, \"pasgen\" stands for password generator and has an undesired operation. \"time\" prints the time. \"fileadd\" adds a file. \"speak\" says whatever you type. \"rainbowtext\" prints whatever you type, but in rainbow.\n");
-	printf(BLU "What're you waiting for? Just type the command here:\n");
+	printf(MAG "What're you waiting for? Just type the command here:\n");
 	scanf("%s", &command);
 	if (strcmp(&command, "rand") == 0) {
 		int num1;
 		int num2;
-		printf(YEL "%s is chosen\n", command);
-		printf(BLU "What is the first number?\n");
+		printf(CYN "What is the first number?\n");
 		scanf("%d", &num1);
-		printf("What is the second number? (Has to be higher than first number.)\n");
+		printf(MAG "What is the second number? (Has to be higher than first number.)\n");
 		scanf("%d", &num2);
 		srand(time(0));
 		int lower = num1, upper = num2;
     		printf(GRN "The random number is: ");
     		for (int i = 0; i < 1; i++) {
         		int num = (rand() % (upper - lower + 1)) + lower;
-        		printf("%d \n", num);
+        		printf(BLU "%d \n", num);
     		}
 	} else if (strcmp(&command, "pasgen") == 0) {
 		printf(RED "WARNING! UNDESIRED OPERATION! But I'm keeping this command because it's funny...\n");
-		printf(BLU "Type any 6 letter word.\n");
+		printf(CYN "Type any 6 letter word.\n");
 		char a[6];
 		scanf("%s", &a);
-		printf("Type any 6-digit int.\n");
+		printf(BLU "Type any 6-digit int.\n");
 		char b[6];
 		scanf("%d", &b);
 		char one = a[0];
@@ -55,7 +54,7 @@ int main() {
 			printf(MAG "What is the name of your file?\n");
 			scanf("%s", &name);
 			strcat(&name, ".txt");
-			printf("What is the content of the file? (no spaces)\n");
+			printf(CYN "What is the content of the file? (no spaces)\n");
 			scanf("%s", &content);
 			FILE *f_ptr;
 			f_ptr = fopen(&name, "w");
@@ -72,21 +71,21 @@ int main() {
 		printf(YEL "Do you already have the file \"espeakcode.sh\" in your directory? Type y (yes) or n (no)\n");
 		scanf("%s", &hascopyone);
 		if (strcmp(&hascopyone, "y") == 0) {
-			printf(BLU "Ok then, moving on...\n");
+			printf(CYN "Ok then, moving on...\n");
 		} else if (strcmp(&hascopyone, "n") == 0) {
 			printf(YEL "Downloading...\n");
-			system("wget https://raw.githubusercontent.com/TheDevGoSike283/maa_1.0-1_all/main/usr/bin/maa.c");
+			system("wget https://raw.githubusercontent.com/TheDevGoSike283/maa_1.0-1_all/main/usr/bin/espeakcode.sh");
 		}
 		system("sh espeakcode.sh");
 	} else if (strcmp(&command, "rainbowtext") == 0) {
 		char hascopytwo[1];
-		printf(YEL "Do you already have the file \"espeakcode.sh\" in your directory? Type y (yes) or n (no)\n");
+		printf(YEL "Do you already have the file \"rainbowcode.sh\" in your directory? Type y (yes) or n (no)\n");
 		scanf("%s", &hascopytwo);
 		if (strcmp(&hascopytwo, "y") == 0) {
-			printf(BLU "Ok then, moving on...\n");
+			printf(CYN "Ok then, moving on...\n");
 		} else if (strcmp(&hascopytwo, "n") == 0) {
 			printf(YEL "Downloading...\n");
-			system("wget https://raw.githubusercontent.com/TheDevGoSike283/maa_1.0-1_all/main/usr/bin/maa.c");
+			system("wget https://raw.githubusercontent.com/TheDevGoSike283/maa_1.0-1_all/main/usr/bin/rainbowcode.sh");
 		}
 		system("sh rainbowcode.sh");
 	} else {
