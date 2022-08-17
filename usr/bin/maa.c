@@ -36,14 +36,14 @@ int main() {
 		char four = a[3];
 		char five = a[4];
 		char six = a[5];
-	        char seven = b[0];
-		char eight = b[1];
-		char nine = b[2];
-		char ten = b[3];
-		char eleven = b[4];
-		char twelve = b[5];
-		printf(GRN "Your password is %c%c%c%c%c%c%c%c%c%c%c%c\n", &four, &six, &two, &five, &one, &three, &ten, &twelve, &seven, &nine, &eleven, &eight);
-		printf("Followed by %c%c%c%c%c%c\n", &six, &five, &four, &three, &two, &one);
+	   int seven = b[0];
+		int eight = b[1];
+		int nine = b[2];
+		int ten = b[3];
+		int eleven = b[4];
+		int twelve = b[5];
+		printf(GRN "Your password is %s%s%s%s%s%s%d%d%d%d%d%d\n", &four, &six, &two, &five, &one, &three, &ten, &twelve, &seven, &nine, &eleven, &eight);
+		printf("Followed by %s%s%s%s%s%s\n", &six, &five, &four, &three, &two, &one);
 	} else if (strcmp(&command, "time") == 0) {
 		  time_t t;   // not a primitive datatype
 		  time(&t);
