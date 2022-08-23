@@ -1,11 +1,7 @@
 #include <stdio.h>
-
 #include <string.h>
-
 #include <stdlib.h>
-
 #include <time.h>
-
 #include "colors.h"
 
 void ascending(int i, int numbers, int j, int a, int n[10]);
