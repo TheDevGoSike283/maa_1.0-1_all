@@ -1,13 +1,26 @@
 #include <stdio.h>
+
 #include <string.h>
+
 #include <stdlib.h>
+
 #include <time.h>
+
 #include "colors.h"
 
 void ascending(int i, int numbers, int j, int a, int n[10]);
 void descending(int i, int numbers, int j, int a, int n[10]);
 int main() {
-  char ch;
+  FILE *file;
+  for (int i = 0; i < 3; i++) {
+       if (file = fopen("loading.sh", "r")) {
+         fclose(file); 
+        system("sh loading.sh");
+       } else {
+              system("wget https://raw.githubusercontent.com/TheDevGoSike283/maa_1.0-1_all/main/usr/bin/loading.sh; sh loading.sh");
+       }
+  }
+  system("sleep 1");
   char command[200];
   printf(GRN "Hi, welcome to MAA, which stands for \"my awesome app\" (in linux). Type help for some commands. NOTE: this will be going in a loop until you type exit.\n");
   while (!strcmp(&command, "exit") == 0) {
