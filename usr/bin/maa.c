@@ -26,8 +26,9 @@ int main() {
   while (!strcmp(&command, "exit") == 0) {
     printf(MAG "What're you waiting for? Just type the command here:\n");
     scanf("%s", &command);
+    printf(BLU "\"%s\" is chosen.\n", &command);
     if (strcmp( &command, "help") == 0) {
-      printf(CYN "Here are the commands: \"rand\" prints a random number between 2 numbers, \"pasgen\" stands for password generator and has an undesired operation. \"time\" prints the time. \"fileadd\" adds a file. \"speak\" says whatever you type. \"rainbowtext\" prints whatever you type, but in rainbow. \"numbersort\" gets 10 numbers, and sorts them in ascending or descending order. \"factorial\" outputs the factorial of the given number (this was, by far, the easiest one to make). To exit the loop, just type \"exit\".\n");
+      printf(CYN "Here are the commands: \"rand\" prints a random number between 2 numbers, \"pasgen\" stands for password generator and has an undesired operation. \"time\" prints the time. \"fileadd\" adds a file. \"speak\" says whatever you type. \"rainbowtext\" prints whatever you type, but in rainbow. \"numbersort\" gets 10 numbers, and sorts them in ascending or descending order. \"factorial\" outputs the factorial of the given number (this was, by far, the easiest one to make). \"gtn\" is just a relaxing game of Guess The Number. To exit the loop, just type \"exit\".\n");
     } else if (strcmp( &command, "rand") == 0) {
       int num1;
       int num2;
@@ -175,6 +176,24 @@ int main() {
              }
           }
        }
+    } else if (strcmp(&command, "gtn") == 0) {
+	    printf(BLU "Welcome to Guess The Number! Try to guess my number from 1 - 100!\n");
+	    int myNumber = (rand() % 100) + 1;
+	    printf("%d\n", myNumber);
+	    int yourNumber;
+            while (myNumber != yourNumber) {
+		int yourNumber;
+		printf(BLU);
+	    	scanf("%d", &yourNumber);
+		if (yourNumber == myNumber) {
+			printf(GRN "Yay, you won!\n");
+			break;
+		} else if (yourNumber > myNumber) {
+			printf(RED "My number is less than that!\n");
+		} else if (yourNumber < myNumber) {
+			printf(RED "My number is greater than that!\n");
+		}
+	    }  
     } else if (strcmp( & command, "exit") == 0) {
        printf(RED "...\n");
     } else {
